@@ -78,17 +78,15 @@ public:		// behavior
 
 void main()
 {
-	Neuron my_neuron(1.0, 2.0);
-	my_neuron.alpha_ = 0.001;
+	Neuron my_neuron(2.0, 1.0);
+	my_neuron.alpha_ = 0.01;
 
-	//my_neuron.feedForwardAndPrint(1.0);
-	
 
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < 10000; ++i)
 	{
 		std::cout << "Training " << i << std::endl;
 		my_neuron.feedForwardAndPrint(2.0);
-		my_neuron.propBackward(10.0);
+		my_neuron.propBackward(6.0);
 		std::cout << "w= " << my_neuron.w_ << " b= " << my_neuron.b_ << std::endl;
 
 	}
